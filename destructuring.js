@@ -21,7 +21,8 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
+const {color, make, model, year} = carDetails;
+console.log(color, make, model, year);
 
 
 
@@ -34,7 +35,7 @@ var carDetails = {
 */
 
 function greeting( obj ) {
-  //Code Here
+const {firstName, lastName, title} = obj;
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
@@ -53,7 +54,12 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
+function totalPopulation (obj) {
+  const {utah, california, texas, arizona} = obj;
+  let totalPopulation = utah+california+texas+arizona
+return totalPopulation;
+} 
+
 
 
 
@@ -66,8 +72,14 @@ function greeting( obj ) {
   Use object destructuring to save the property values to new variables. 
   Push these new variables to an array and return the array. 
 */
+function ingredients (obj) {
+  const {carb, fat, protein} = obj;
+  const ingredients = [];
+  ingredients.push(carb,fat,protein)
+  return ingredients;
+}
 
-//Code Here
+
 
 
 
@@ -85,7 +97,10 @@ function greeting( obj ) {
   Find the smallest number of the three and return that number.
 */
 
-//Code Here
+function largeNumbers ({first, second, third}) {
+  return Math.min(first, second, third);
+}
+
 
 
 
@@ -96,7 +111,49 @@ function greeting( obj ) {
   The object properties will be named a, b, and c and their values will be arrays of numbers.
   Find the longest array and return that array.
 */
+// let maxLength = 0;
+// let longestArray = [];
+// function numberGroups ({a,b,c}) {
+//   return Math.max.apply(a,b,c);
+// }
 
-//Code Here
+// let maxLength = 0;
+// let longestArray = [];
+// function numberGroups ({a,b,c}) {
+// for (var i = 0; i< longestArray.length; i++){
+//   if (longestArray[i].length > maxLength.length) {
+//     longestArray = maxLength[i];
+//   }
+// } return numberGroups;
+// }
 
+// function numberGroups ({a,b,c}) {
+//   let arrays= [a,b,c]
+//   let longest=[];
+//   arrays.forEach((array,index) => {
+//     if (array.length > longest.length) {
+//       longest.push(arrays[index]);}
+//     })
+//     return longest;
+//   }
 
+// function numberGroups ({a,b,c}) {
+//   if (a.length > b.length) {
+//     if (a.length > c.length) {
+//       return a;
+//     } 
+//   return c;
+//   } 
+//   if (b.length > c.length) {
+//     return c;
+//   }
+// } 
+function numberGroups({a, b, c}){
+  if (a.length > b.length && a.length > c.length){
+    return a;
+  } else if (b.length > a.length && b.length > c.length){
+    return b;
+  } else{
+    return c;
+  }
+ }
